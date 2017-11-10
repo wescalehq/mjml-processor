@@ -1,0 +1,85 @@
+<mjml>
+  <mj-body>
+    <mj-container background-color="#F4F4F4" color="#55575d" font-family="Arial, sans-serif">
+      <mj-section background-color="#ffffff" background-repeat="repeat" padding-bottom="0px" padding-top="30px" padding="20px 0" text-align="center" vertical-align="top">
+        <mj-column>
+          <mj-image align="center" padding="10px 25px" src="http://5vph.mj.am/img/5vph/b/1g8pi/0gztq.png" target="_blank" width="214px"></mj-image>
+          <mj-text align="left" color="#55575d" font-family="Arial, sans-serif" font-size="13px" line-height="22px" padding-bottom="15px" padding-top="0px" padding="10px 25px">
+            <p style="text-align: center; margin: 10px 0;color:#151e23;font-size:14px;font-family:Georgia,Helvetica,Arial,sans-serif">Product | Concept | Contact</p>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+      <mj-section background-repeat="repeat" padding-bottom="0px" padding-top="0px" padding="20px 0" text-align="center" vertical-align="top">
+        <mj-column>
+          <mj-image align="center" padding-bottom="0px" padding-left="0px" padding-right="0px" padding-top="0px" padding="10px 25px" src="http://5vph.mj.am/img/5vph/b/1g8pi/068ys.png" target="_blank" width="600px"></mj-image>
+        </mj-column>
+      </mj-section>
+      <mj-section background-color="#ffffff" background-repeat="repeat" background-size="auto" padding-bottom="0px" padding-top="30px" padding="20px 0" text-align="center" vertical-align="top">
+        <mj-column>
+          <mj-text align="left" color="#55575d" font-family="Arial, sans-serif" font-size="30px" line-height="22px" padding-bottom="10px" padding-top="10px" padding="10px 25px">
+            <p style="line-height: 30px; margin: 10px 0; text-align: center; color:#151e23; font-size:30p; font-family:Georgia,Helvetica,Arial,sans-serif">- Our Holiday Recipes -</p>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+      <mj-section background-color="#ffffff" background-repeat="repeat" padding-bottom="0px" padding="20px 0" text-align="center" vertical-align="top">
+        <mj-column>
+          <mj-image align="center" padding-bottom="20px" padding-left="30px" padding-right="30px" padding-top="0px" padding="10px 25px" src="http://5vph.mj.am/img/5vph/b/1g8pi/0gzvp.jpeg" target="_blank" width="1200px"></mj-image>
+        </mj-column>
+        <mj-column>
+          <mj-text align="left" color="#55575d" font-family="Arial, sans-serif" font-size="13px" line-height="22px" padding-bottom="0px" padding-left="40px" padding-right="40px" padding-top="0px" padding="10px 25px">
+            <p style="margin: 10px 0; color:#151e23; font-size:16px; font-family:Georgia,Helvetica,Arial,sans-serif"><b>Cake Title</b></p>
+            <p style="line-height: 16px; margin: 10px 0;font-size:14px; color:#151e23; font-family:Georgia,Helvetica,Arial,sans-serif; color:#354552">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            <p style="line-height: 16px; margin: 10px 0; color:#354552; font-size:14px; font-family:Georgia,Helvetica,Arial,sans-serif"><u>Choose me</u> &gt;</p>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+      <mj-section background-color="#ffffff" background-repeat="repeat" direction="rtl" padding-bottom="0px" padding-top="0px" padding="20px 0" text-align="center" vertical-align="top">
+        <mj-column>
+          <mj-image align="center" padding-bottom="20px" padding-left="30px" padding-right="30px" padding-top="20px" padding="10px 25px" src="http://5vph.mj.am/img/5vph/b/1g8pi/0gzv6.jpeg" target="_blank" width="1200px"></mj-image>
+        </mj-column>
+        <mj-column>
+          <mj-text align="left" color="#55575d" font-family="Arial, sans-serif" font-size="13px" line-height="22px" padding-bottom="0px" padding-left="40px" padding-right="40px" padding-top="0px" padding="10px 25px">
+            <p style="margin: 10px 0; color:#151e23; font-size:16px; font-family:Georgia,Helvetica,Arial,sans-serif"><b>Cake Title</b></p>
+            <p style="line-height: 16px; margin: 10px 0;font-size:14px; color:#151e23; font-family:Georgia,Helvetica,Arial,sans-serif; color:#354552">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            <p style="line-height: 16px; margin: 10px 0; color:#354552; font-size:14px; font-family:Georgia,Helvetica,Arial,sans-serif"><u>Choose me</u> &gt;</p>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+      <mj-section background-color="#ffffff" background-repeat="repeat" padding-bottom="0px" padding-top="0px" padding="20px 0" text-align="center" vertical-align="top">
+        <mj-column>
+          <mj-image align="center" padding-bottom="20px" padding-left="30px" padding-right="30px" padding-top="20px" padding="10px 25px" src="http://5vph.mj.am/img/5vph/b/1g8pi/0gzvh.jpeg" target="_blank" width="1200px"></mj-image>
+        </mj-column>
+        <mj-column>
+          <mj-text align="left" color="#55575d" font-family="Arial, sans-serif" font-size="13px" line-height="22px" padding-bottom="0px" padding-left="40px" padding-right="40px" padding-top="0px" padding="10px 25px">
+            <p style="margin: 10px 0; color:#151e23; font-size:16px; font-family:Georgia,Helvetica,Arial,sans-serif"><b>Cake Title</b></p>
+            <p style="line-height: 16px; margin: 10px 0;font-size:14px; color:#151e23; font-family:Georgia,Helvetica,Arial,sans-serif; color:#354552">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            <p style="line-height: 16px; margin: 10px 0; color:#354552; font-size:14px; font-family:Georgia,Helvetica,Arial,sans-serif"><u>Choose me</u> &gt;</p>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+      <mj-section background-color="#ffffff" background-repeat="repeat" padding-top="0px" padding="20px 0" text-align="center" vertical-align="top">
+        <mj-column>
+          <mj-button align="center" background-color="#354552" border-radius="3px" color="#ffffff" font-family="Georgia, Helvetica, Arial, sans-serif" font-size="14px" font-weight="normal" inner-padding="10px 25px" padding="10px 25px" text-decoration="none" text-transform="none"
+            vertical-align="middle">
+            Discover all desserts
+          </mj-button>
+        </mj-column>
+      </mj-section>
+      <mj-section background-color="#ffffff" background-repeat="repeat" padding-bottom="0px" padding-top="0px" padding="20px 0" text-align="center" vertical-align="top">
+        <mj-column>
+          <mj-image align="center" padding-bottom="0px" padding-left="0px" padding-right="0px" padding-top="0px" padding="10px 25px" src="http://5vph.mj.am/img/5vph/b/1g8pi/068y3.jpeg" target="_blank" width="600px"></mj-image>
+        </mj-column>
+      </mj-section>
+      <mj-section background-color="#ffffff" background-repeat="repeat" padding="20px 0" text-align="center" vertical-align="top">
+        <mj-column>
+          <mj-image align="center" padding="10px 25px" src="http://5vph.mj.am/img/5vph/b/1g8pi/0gzjm.png" target="_blank" width="202px"></mj-image>
+          <mj-social align="center" base-url="https://www.mailjet.com/images/theme/v1/icons/ico-social/" color="#55575d" display="facebook:share pinterest:share instagram:share" facebook-content="Share" facebook-href="[[SHORT_PERMALINK]]" facebook-icon-color="#151E23"
+            facebook-sharer="true" font-family="Arial, sans-serif" font-size="13px" google-content="+1" google-href="[[SHORT_PERMALINK]]" google-icon-color="#151E23" google-sharer="true" icon-size="20px" instagram-content="Share" instagram-href="[[SHORT_PERMALINK]]"
+            instagram-icon-color="#151E23" instagram-sharer="true" line-height="22px" linkedin-content="Share" linkedin-href="[[SHORT_PERMALINK]]" linkedin-icon-color="#151E23" linkedin-sharer="true" mode="horizontal" padding-top="0px" padding="10px 25px"
+            pinterest-content="Pin it" pinterest-href="[[SHORT_PERMALINK]]" pinterest-icon-color="#151E23" pinterest-sharer="true" text-decoration="none" text-mode="false" twitter-content="Tweet" twitter-href="[[SHORT_PERMALINK]]" twitter-icon-color="#151E23"
+            twitter-sharer="true"></mj-social>
+        </mj-column>
+      </mj-section>
+    </mj-container>
+  </mj-body>
+</mjml>
