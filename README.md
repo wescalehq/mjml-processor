@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/wescalehq/mjml-processor.svg?branch=master)](https://travis-ci.org/wescalehq/mjml-processor)
+[![](https://jitpack.io/v/wescalehq/mjml-processor.svg)](https://jitpack.io/#wescalehq/mjml-processor)
 
 ## Overview
 
