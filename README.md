@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/wescalehq/mjml-processor.svg?branch=master)](https://travis-ci.org/wescalehq/mjml-processor)
+
 ## Overview
 
 This projects aims to bring [mjml](https://mjml.io/) (mailjet markup language) to
