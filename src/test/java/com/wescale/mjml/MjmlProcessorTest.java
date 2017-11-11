@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class MjmlProcessorTest {
 
@@ -21,7 +22,7 @@ public class MjmlProcessorTest {
 	}
 
 	@Test
-	public void process() throws Exception {
+	public void shouldProcessSimpleTemplate() throws Exception {
 
 		String mjml = IOUtils.resourceToString("/simple_template.mjml", Charset.forName("UTF-8"));
 		String expectedHtml = IOUtils.resourceToString("/simple_template.html", Charset.forName("UTF-8"));
@@ -29,4 +30,22 @@ public class MjmlProcessorTest {
 
 		assertEquals(expectedHtml, actualHtml);
 	}
+
+	@Test
+	public void shouldProcessOnePageTemplate() throws IOException {
+
+        String mjml = IOUtils.resourceToString("/one_page.mjml", Charset.forName("UTF-8"));
+        String actualHtml = mjmlProcessor.process(mjml).getHtml();
+
+        assertNotNull(actualHtml);
+    }
+
+	@Test
+	public void sameHtmlShouldYieldEqualResult() throws IOException {
+
+        String mjml = IOUtils.resourceToString("/simple_template.mjml", Charset.forName("UTF-8"));
+
+        assertEquals(mjmlProcessor.process(mjml), mjmlProcessor.process(mjml));
+        assertEquals(mjmlProcessor.process(mjml).hashCode(), mjmlProcessor.process(mjml).hashCode());
+    }
 }

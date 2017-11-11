@@ -9,6 +9,54 @@ the java world. Because mjml is only provided as a bunch of javascript packages,
 way to access it from Java is to run the original javascript code within [Nashorn](http://www.oracle.com/technetwork/articles/java/jf14-nashorn-2126515.html)
 and to bridge calls between these two.
 
+## Get It
+
+Releases are maintained via [jcenter](https://bintray.com/wescalehq/oss/mjml-processor). Snapshots are available via [jitpack](https://jitpack.io/#wescalehq/mjml-processor).
+
+### Gradle
+
+```gradle
+repositories {
+    jcenter()
+}
+
+dependencies {
+	compile 'com.wescale:mjml-processor:CURRENT_VERSION'
+}
+```
+
+### Maven
+
+```xml
+<dependency>
+    <groupId>com.wescale</groupId>
+    <artifactId>mjml-processor</artifactId>
+    <version>1.0.2</version>
+</dependency>
+...
+<repositories>
+    <repository>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+        <id>jcenter</id>
+        <name>bintray</name>
+        <url>https://jcenter.bintray.com</url>
+    </repository>
+</repositories>
+<pluginRepositories>
+    <pluginRepository>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+        <id>jcenter</id>
+        <name>bintray-plugins</name>
+        <url>https://jcenter.bintray.com</url>
+    </pluginRepository>
+</pluginRepositories>
+...
+```
+
 ## Usage
 
 Include the package and use it as follows
@@ -35,3 +83,4 @@ loads about 4MB of javascript and parses/compiles this into bytecode. This leads
 
 This means that you *should really* take care of *not* throwing away this instance quickly. Create it and
 hold it as long as you can and the performance of calling `process` will increase dramatically over time.
+You could even think of using an object pool to handle multiple threads processing mjml markup.
