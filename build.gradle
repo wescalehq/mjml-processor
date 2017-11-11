@@ -15,6 +15,7 @@ group 'com.wescale'
 apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin: 'maven-publish'
+apply plugin: 'jacoco'
 
 sourceCompatibility = 1.8
 
@@ -115,6 +116,18 @@ task writeVersion {
     description "Writes the artifact version of this project into a 'version.txt' file. Used for jenkins 'rename build task'."
     doFirst {
         new File("version.txt").write(project.version)
+    }
+}
+
+jacoco {
+    toolVersion = '0.7.9'
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        csv.enabled true
+        html.enabled true
     }
 }
 
