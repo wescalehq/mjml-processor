@@ -15,9 +15,10 @@ before_install:
   - pip install --user codecov
 
 deploy:
-  - ./gradlew bintray
+  provider: script
+  script: ./gradlew bintray
   on:
     tags: true
-    
+
 after_success:
 - bash <(curl -s https://codecov.io/bash)
