@@ -1,0 +1,2 @@
+ignore:
+  - "**/MjmlProcessorResult.java"
