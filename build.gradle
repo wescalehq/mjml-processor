@@ -9,12 +9,15 @@ scmVersion {
     }
     hooks {
         pre 'fileUpdate', [
-          file: 'README.md', pattern: {v, c -> /<version>$v/}, replacement: {v, c -> "<version>$v"},
+          file: 'README.md', pattern: {v, c -> /<version>$v/}, replacement: {v, c -> "<version>$v"}
+        ]
+        pre 'fileUpdate', [
           file: 'README.md', pattern: {v, c -> /com.wescale:mjml-processor:$v/}, replacement: {v, c -> "com.wescale:mjml-processor:$v"}
         ]
     }
 }
 
+//file: 'README.md', pattern: {v, c -> /com.wescale:mjml-processor:$v/}, replacement: {v, c -> "com.wescale:mjml-processor:$v"}
 project.version = scmVersion.version
 group 'com.wescale'
 

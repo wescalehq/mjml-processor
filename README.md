@@ -23,7 +23,7 @@ repositories {
 }
 
 dependencies {
-	compile 'com.wescale:mjml-processor:CURRENT_VERSION'
+	compile 'com.wescale:mjml-processor:1.0.3'
 }
 ```
 
@@ -33,7 +33,7 @@ dependencies {
 <dependency>
     <groupId>com.wescale</groupId>
     <artifactId>mjml-processor</artifactId>
-    <version>CURRENT_VERSION</version>
+    <version>1.0.3</version>
 </dependency>
 ...
 <repositories>
