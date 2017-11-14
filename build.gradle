@@ -7,6 +7,12 @@ scmVersion {
     tag {
         prefix = ''
     }
+    hooks {
+        pre 'fileUpdate', [
+          file: 'README.md', pattern: {v, c -> /<version>$v/}, replacement: {v, c -> "<version>$v"},
+          file: 'README.md', pattern: {v, c -> /com.wescale:mjml-processor:$v/}, replacement: {v, c -> "com.wescale:mjml-processor:$v"}
+        ]
+    }
 }
 
 project.version = scmVersion.version
@@ -47,7 +53,7 @@ def pomConfig = {
             name "Michael Sievers"
         }
     }
-    
+
     scm {
        url "https://github.com/wescalehq/mjml-processor"
     }
@@ -70,7 +76,7 @@ bintray {
         vcsUrl = 'https://github.com/wescalehq/mjml-processor.git'
         licenses = ['Apache-2.0']
         publicDownloadNumbers = true
-        githubRepo = 'wescalehq/mjml-processor' 
+        githubRepo = 'wescalehq/mjml-processor'
         githubReleaseNotesFile = 'CHANGELOG.md'
         version {
             gpg {

@@ -33,7 +33,7 @@ dependencies {
 <dependency>
     <groupId>com.wescale</groupId>
     <artifactId>mjml-processor</artifactId>
-    <version>1.0.2</version>
+    <version>CURRENT_VERSION</version>
 </dependency>
 ...
 <repositories>
