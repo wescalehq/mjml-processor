@@ -1,24 +1,24 @@
-
 language: java
-
 before_cache:
-  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
-  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+- rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+- rm -fr $HOME/.gradle/caches/*/plugin-resolution/
 cache:
   directories:
-    - $HOME/.gradle/caches/
-    - $HOME/.gradle/wrapper/
-
+  - "$HOME/.gradle/caches/"
+  - "$HOME/.gradle/wrapper/"
 before_install:
-  - sudo apt-get install jq
-  - wget -O ~/codacy-coverage-reporter-assembly-latest.jar $(curl https://api.github.com/repos/codacy/codacy-coverage-reporter/releases/latest | jq -r .assets[0].browser_download_url)
-  - pip install --user codecov
-
+- sudo apt-get install jq
+- wget -O ~/codacy-coverage-reporter-assembly-latest.jar $(curl https://api.github.com/repos/codacy/codacy-coverage-reporter/releases/latest
+  | jq -r .assets[0].browser_download_url)
+- pip install --user codecov
 deploy:
   provider: script
-  script: ./gradlew bintray
+  script: "./gradlew bintray"
   on:
     tags: true
-
 after_success:
 - bash <(curl -s https://codecov.io/bash)
+env:
+  global:
+  - secure: FK2gHhIJt+RAxElNLx5+eNpiW+jhICt7YKEVtxFyToM/B8tlz3iqzdlwofIECfKgR/nZhXBIzLbd3rrwQeuK+TATyVy6azFEri+Eygn5ksf6Fvzxn6jOdyCpUzZ1SFasaVnDrvAk9Vb3Cbr+VO/F7EnF1vyM1rNjHOPYx/l7meYnju+FBbm+kCbw7dKcTZwx64PVRuKVMqbxCSfwV7+REep67BOhM85XKascDht0hjIYgXFrTYr/7y9JoJM9Bpm2JDd0W989fEoHXCdAMGd/4vFIO6ICZ9wMbRrCu9OiyMGcSCBMlVxXYyy8wANXgNXZyE+K4CxApMDmc8QYEX9b5Yk9CIyO4I7/oWgRQTJ5DdO+p3r/gkwUkJzRSf9WlCFoBDH+JaCZuMUU8DC8EkNc+G0II7TRYEAG4vCRDHm9tutrCo9uDRHSkI2TciF93tIP9wT5q9CNG1SvjLZLm3wQOToaxuOuaIETWLFRYcK49SoCXXPqYxBfBmhthtZOVvSVV+CsGK884iSRAUi0rX7W3Mz2/OOsTCyneXVLe2tJH8qeqRQzxsni5wbxI6dqE/DuR/TzxQoS/6gsJ5npFohI7kaHcm631nK4a3voQzXIE/dN0petigF488HHAQIz8VMQRcHb920FyHQITvkujfVfvtS8rd42AHIcqp89U7S2xqI=
+  - secure: sGzGSGPJLJIj0KrhGdfs5zdc+vWQGoAVsN8KhMkiZL63yV7/BLVBZIHZyt58YRC9coG+elH5RPhc/5ADjhoDKCqUlFBxaTSlht6mV0gAJMAZI6HoqHhbkptVjQwe8gREjnOtQ+vWGMJ0BwhfAoqBV3Otm6ObDPMvtnWrUx8QeH3dYd3D5a3Q0AMPDHGfo3ts6tp4PuVLd9vxmYNBySq+9hkPebLt/iyIhj5W9ORH6r9T51wiNqBO7ARwwsgPkfUH44CvIIedB2owMqm1ym653EbxI9LC2dR6Xdx1wKD2hh3ctwGYqtY462fjWteIruoHJznIInKiOTxecy2nXPBA85Al27V12kbzD6hxbprjKM4Hd5Umlzj6nj7BjSComPVSfMrXNUHiucyLoRisWXaVvKumQqnhnY8U8ODur2BdS2cjC9CMN1OCajRLPGbrt4s1z14vwnFw/m9K/MfwbJ5HA3XYe2soNjUHmIAgP2kgARq95uNIDmcfeKiXy2+gi1wkTTDuG8BspVTPS7rJhMqjE0FBC0mGXCFR9cX3xOoF1W7UoFHHXHEM3rjZi30zZLEVVrwvDAyGsdZB04Dj5aM1KO8jtExZeKDiF2Hdlegk6iTfXr+gBOEzZQyTpjECmSIU2bhsUFcOKLdr0zkt1ipz9CEQbcZDHBDGVRhgMOYRieY=
