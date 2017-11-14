@@ -5,6 +5,7 @@ import org.apache.commons.io.FileUtils;
 import javax.script.ScriptException;
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
 public class MjmlProcessorBenchmark {
 
@@ -15,7 +16,7 @@ public class MjmlProcessorBenchmark {
 
         // process template
         File templateFile = new File("src/test/resources/complex_template.mjml");
-        String template = FileUtils.readFileToString(templateFile);
+        String template = FileUtils.readFileToString(templateFile, StandardCharsets.UTF_8);
 
         // warm up
         System.out.println("Warm up ...");
