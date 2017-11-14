@@ -1,7 +1,8 @@
-[![Build Status](https://travis-ci.org/wescalehq/mjml-processor.svg?branch=master)](https://travis-ci.org/wescalehq/mjml-processor)
-[![](https://jitpack.io/v/wescalehq/mjml-processor.svg)](https://jitpack.io/#wescalehq/mjml-processor)
- [ ![Download](https://api.bintray.com/packages/wescalehq/oss/mjml-processor/images/download.svg) ](https://bintray.com/wescalehq/oss/mjml-processor/_latestVersion)
-[![codecov](https://codecov.io/gh/wescalehq/mjml-processor/branch/master/graph/badge.svg)](https://codecov.io/gh/wescalehq/mjml-processor)
+[![Travis](https://img.shields.io/travis/wescalehq/mjml-processor.svg?style=flat-square)](https://travis-ci.org/wescalehq/mjml-processor)
+[![JitPack](https://img.shields.io/jitpack/v/wescalehq/mjml-processor.svg?style=flat-square)](https://jitpack.io/#wescalehq/mjml-processor)
+[![Download](https://api.bintray.com/packages/wescalehq/oss/mjml-processor/images/download.svg) ](https://bintray.com/wescalehq/oss/mjml-processor/_latestVersion)
+[![Codecov](https://img.shields.io/codecov/c/github/wescalehq/mjml-processor.svg?style=flat-square)](https://codecov.io/gh/wescalehq/mjml-processor)
+[![license](https://img.shields.io/github/license/wescalehq/mjml-processor.svg?style=flat-square)]()
 
 ## Overview
 
