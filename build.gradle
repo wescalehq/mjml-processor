@@ -14,6 +14,7 @@ scmVersion {
         pre 'fileUpdate', [
           file: 'README.md', pattern: {v, c -> /com.wescale:mjml-processor:$v/}, replacement: {v, c -> "com.wescale:mjml-processor:$v"}
         ]
+        pre 'commit'
     }
 }
 
