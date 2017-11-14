@@ -39,7 +39,7 @@ public class MjmlProcessor {
      * @param mjml
      * @return MjmlProcessorResult
      */
-    public MjmlProcessorResult process(String mjml) {
+    public synchronized MjmlProcessorResult process(String mjml) { /* synchronized because of js multithreading issues */
         return new MjmlProcessorResult(mjml2html.call(null, mjml));
     }
 
