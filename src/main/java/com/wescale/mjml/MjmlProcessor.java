@@ -2,11 +2,7 @@ package com.wescale.mjml;
 
 import jdk.nashorn.api.scripting.JSObject;
 
-import javax.script.Compilable;
-import javax.script.CompiledScript;
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
+import javax.script.*;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -19,6 +15,7 @@ public class MjmlProcessor {
 
     /**
      * Factory method that returns a new and initialized MjmlProcessor instance.
+     *
      * @return MjmlProcessor
      */
     public static MjmlProcessor create() {
@@ -27,6 +24,7 @@ public class MjmlProcessor {
 
     /**
      * For instances not created via the factory method, this initializes a newly created MjmlProcessor.
+     *
      * @return MjmlProcessor
      */
     public MjmlProcessor initialize() {
@@ -37,6 +35,7 @@ public class MjmlProcessor {
 
     /**
      * Processes the given mjml template.
+     *
      * @param mjml
      * @return MjmlProcessorResult
      */

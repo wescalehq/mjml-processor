@@ -2,7 +2,7 @@ package com.wescale.mjml;
 
 import org.apache.commons.io.FileUtils;
 
-import javax.script.*;
+import javax.script.ScriptException;
 import java.io.File;
 import java.io.IOException;
 

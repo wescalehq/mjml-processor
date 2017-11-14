@@ -8,32 +8,30 @@ import javax.script.ScriptException;
 import java.io.IOException;
 import java.nio.charset.Charset;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 public class MjmlProcessorTest {
 
-	private MjmlProcessor mjmlProcessor;
+    private MjmlProcessor mjmlProcessor;
 
-	@Before
-	public void setMjmlProcessor() throws ScriptException, IOException {
+    @Before
+    public void setMjmlProcessor() throws ScriptException, IOException {
 
-		mjmlProcessor = MjmlProcessor.create();
-	}
+        mjmlProcessor = MjmlProcessor.create();
+    }
 
-	@Test
-	public void shouldProcessSimpleTemplate() throws Exception {
+    @Test
+    public void shouldProcessSimpleTemplate() throws Exception {
 
-		String mjml = IOUtils.resourceToString("/simple_template.mjml", Charset.forName("UTF-8"));
-		String expectedHtml = IOUtils.resourceToString("/simple_template.html", Charset.forName("UTF-8"));
-		String actualHtml = mjmlProcessor.process(mjml).getHtml();
+        String mjml = IOUtils.resourceToString("/simple_template.mjml", Charset.forName("UTF-8"));
+        String expectedHtml = IOUtils.resourceToString("/simple_template.html", Charset.forName("UTF-8"));
+        String actualHtml = mjmlProcessor.process(mjml).getHtml();
 
-		assertEquals(expectedHtml, actualHtml);
-	}
+        assertEquals(expectedHtml, actualHtml);
+    }
 
-	@Test
-	public void shouldProcessOnePageTemplate() throws IOException {
+    @Test
+    public void shouldProcessOnePageTemplate() throws IOException {
 
         String mjml = IOUtils.resourceToString("/one_page.mjml", Charset.forName("UTF-8"));
         String actualHtml = mjmlProcessor.process(mjml).getHtml();
@@ -41,8 +39,8 @@ public class MjmlProcessorTest {
         assertNotNull(actualHtml);
     }
 
-	@Test
-	public void sameHtmlShouldYieldEqualResult() throws IOException {
+    @Test
+    public void sameHtmlShouldYieldEqualResult() throws IOException {
 
         String mjml = IOUtils.resourceToString("/simple_template.mjml", Charset.forName("UTF-8"));
 
