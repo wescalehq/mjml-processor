@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 
 public class MjmlProcessorTest {
@@ -47,5 +48,15 @@ public class MjmlProcessorTest {
 
         assertEquals(mjmlProcessor.process(mjml), mjmlProcessor.process(mjml));
         assertEquals(mjmlProcessor.process(mjml).hashCode(), mjmlProcessor.process(mjml).hashCode());
+    }
+
+    @Test
+    public void differentHtmlShouldYieldDifferentResult() throws IOException {
+
+        String simple = IOUtils.resourceToString("/simple_template.mjml", Charset.forName("UTF-8"));
+        String onePage = IOUtils.resourceToString("/one_page.mjml", Charset.forName("UTF-8"));
+
+        assertNotEquals(mjmlProcessor.process(simple), mjmlProcessor.process(onePage));
+        assertNotEquals(mjmlProcessor.process(simple).hashCode(), mjmlProcessor.process(onePage).hashCode());
     }
 }
