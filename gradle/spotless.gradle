@@ -8,7 +8,7 @@ spotless {
     }
 
     java {
-        licenseHeaderFile 'license-header.java'
+        licenseHeaderFile 'header.java'
 
         indentWithSpaces()
         importOrderFile 'wescale.importorder'
