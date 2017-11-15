@@ -1,28 +1,20 @@
 spotless {
-	format 'misc', {
-		target '**/*.gradle', '**/*.md', '**/.gitignore', '**/*.yml'
+    format 'misc', {
+        target '**/*.gradle', '**/*.md', '**/.gitignore', '**/*.yml'
 
-		trimTrailingWhitespace()
-		indentWithSpaces() // or tabs.
-		endWithNewline()
-	}
+        trimTrailingWhitespace()
+        indentWithSpaces() // or tabs.
+        endWithNewline()
+    }
 
     java {
-		licenseHeaderFile 'license-header.java'		// License header file
-		// Obviously, you can't specify both licenseHeader and licenseHeaderFile at the same time
+        licenseHeaderFile 'license-header.java'
 
-//		importOrder 'java', 'javax', 'org', 'com', 'com.wescale', ''	// A sequence of package names
-        importOrderFile 'wescale.importorder'				// An import ordering file, exported from Eclipse
-		// As before, you can't specify both importOrder and importOrderFile at the same time
-		// You probably want an empty string at the end - all of the imports you didn't specify
-		// explicitly will go there.
+        indentWithSpaces()
+        importOrderFile 'wescale.importorder'
 
-		removeUnusedImports() // removes any unused imports
-//        eclipse().configFile ''
+        removeUnusedImports() // removes any unused imports
 
         custom 'Lambda fix', { it.replace('} )', '})').replace('} ,', '},') }
-
-		// eclipse().configFile 'spotless.eclipseformat.xml'	// XML file dumped out by the Eclipse formatter
-		// If you have Eclipse preference or property files, you can use them too.
-	}
+    }
 }

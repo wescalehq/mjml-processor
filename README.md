@@ -23,7 +23,7 @@ repositories {
 }
 
 dependencies {
-	compile 'com.wescale:mjml-processor:1.0.4'
+    compile 'com.wescale:mjml-processor:1.0.4'
 }
 ```
 

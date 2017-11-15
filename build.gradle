@@ -19,7 +19,6 @@ scmVersion {
     }
 }
 
-//file: 'README.md', pattern: {v, c -> /com.wescale:mjml-processor:$v/}, replacement: {v, c -> "com.wescale:mjml-processor:$v"}
 project.version = scmVersion.version
 group 'com.wescale'
 
@@ -42,86 +41,3 @@ dependencies {
     testCompile group: 'commons-io', name: 'commons-io', version: '2.6'
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
-
-// def pomConfig = {
-//     licenses {
-//         license {
-//             name "The Apache Software License, Version 2.0"
-//             url "http://www.apache.org/licenses/LICENSE-2.0.txt"
-//             distribution "repo"
-//         }
-//     }
-//     developers {
-//         developer {
-//             id "atomfrede"
-//             name "Frederik Hahne"
-//             email "atomfrede@gmail.com"
-//         }
-//         developer {
-//             id "msievers"
-//             name "Michael Sievers"
-//         }
-//     }
-
-//     scm {
-//        url "https://github.com/wescalehq/mjml-processor"
-//     }
-// }
-
-
-// bintray {
-// 	user = project.hasProperty('bintrayUser') ? project.property('bintrayUser') : System.getenv('BINTRAY_USER')
-// 	key = project.hasProperty('bintrayApiKey') ? project.property('bintrayApiKey') : System.getenv('BINTRAY_API_KEY')
-//     publications = ['DefaultMavenPublication']
-
-//     publish = true
-//     pkg {
-//         repo = 'oss'
-//         name = 'mjml-processor'
-//         userOrg = 'wescalehq'
-//         desc = 'A thin wrapper around mjml to provide easy mjml rendering in java applications '
-//         websiteUrl = 'https://github.com/wescalehq/mjml-processor'
-//         issueTrackerUrl = 'https://github.com/wescalehq/mjml-processor/issues'
-//         vcsUrl = 'https://github.com/wescalehq/mjml-processor.git'
-//         licenses = ['Apache-2.0']
-//         publicDownloadNumbers = true
-//         githubRepo = 'wescalehq/mjml-processor'
-//         githubReleaseNotesFile = 'CHANGELOG.md'
-//         version {
-//             gpg {
-//                 sign = true //Determines whether to GPG sign the files. The default is false
-//             }
-//         }
-//     }
-
-// }
-
-// publishing {
-//     publications {
-//         DefaultMavenPublication(MavenPublication) {
-//             from components.java
-//             artifact sourcesJar
-//             artifact javadocJar
-//             groupId group
-//             artifactId project.name
-//             version project.version
-//             pom.withXml {
-//                 def root = asNode()
-//                 root.appendNode('description', 'A thin nashorn wrapper around mjml to provide easy mjml rendering in java applications' )
-//                 root.appendNode('name', 'MJML Java Processor')
-//                 root.appendNode('url', 'https://github.com/wescalehq/mjml-processor')
-//                 root.children().last() + pomConfig
-//             }
-//         }
-//     }
-// }
-
-// task sourcesJar(type: Jar) {
-//   from sourceSets.main.allJava
-//   classifier "sources"
-// }
-
-// task javadocJar(type: Jar, dependsOn: javadoc) {
-//     classifier = 'javadoc'
-//     from javadoc.destinationDir
-// }
