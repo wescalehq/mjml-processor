@@ -50,6 +50,16 @@ bintray {
 
 }
 
+task sourcesJar(type: Jar) {
+    from sourceSets.main.allJava
+    classifier "sources"
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
 publishing {
     publications {
         DefaultMavenPublication(MavenPublication) {
@@ -68,14 +78,4 @@ publishing {
             }
         }
     }
-}
-
-task sourcesJar(type: Jar) {
-  from sourceSets.main.allJava
-  classifier "sources"
-}
-
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
 }
