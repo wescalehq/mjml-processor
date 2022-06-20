@@ -15,7 +15,7 @@
  */
 package com.wescale.mjml;
 
-import jdk.nashorn.api.scripting.JSObject;
+import org.openjdk.nashorn.api.scripting.JSObject;
 
 import javax.script.*;
 

@@ -20,22 +20,22 @@ import org.junit.Before;
 import org.junit.Test;
 
 import javax.script.ScriptException;
-
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import java.util.Collection;
+import java.util.LinkedList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNotNull;
+import java.util.concurrent.Future;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
+import static org.junit.Assert.*;
 
 public class MjmlProcessorTest {
 
     private MjmlProcessor mjmlProcessor;
+
 
     @Before
     public void setMjmlProcessor() throws ScriptException, IOException {
@@ -49,6 +49,10 @@ public class MjmlProcessorTest {
         String mjml = IOUtils.resourceToString("/simple_template.mjml", Charset.forName("UTF-8"));
         String expectedHtml = IOUtils.resourceToString("/simple_template.html", Charset.forName("UTF-8"));
         String actualHtml = mjmlProcessor.process(mjml).getHtml();
+
+        //unify line endings to avoid test failures on windows
+        expectedHtml = expectedHtml.replaceAll("\\r\\n?", "\n");
+        actualHtml = actualHtml.replaceAll("\\r\\n?", "\n");
 
         assertEquals(expectedHtml, actualHtml);
     }
@@ -83,6 +87,7 @@ public class MjmlProcessorTest {
 
     public class ConsumerThread extends Thread {
         private int threadNumber;
+        private AssertionError assertionError;
 
         public ConsumerThread(int threadNumber) {
             this.threadNumber = threadNumber;
@@ -100,11 +105,23 @@ public class MjmlProcessorTest {
                 String expectedHtml = IOUtils.resourceToString("/" + htmlOutputFilename, StandardCharsets.UTF_8);
                 String actualHtml = mjmlProcessor.process(mjml).getHtml();
 
+                //unify line endings to avoid test failures on windows
+                actualHtml = actualHtml.replaceAll("\\r\\n?", "\n");
+                expectedHtml = expectedHtml.replaceAll("\\r\\n?", "\n");
+
                 assertEquals(expectedHtml, actualHtml);
                 Thread.currentThread().interrupt();
+            } catch(AssertionError e){
+                assertionError = e;
+                System.out.println("AssertionError was catched. make sure .test() is called in the main thread of the test.");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+        }
+
+        public void test() throws InterruptedException{
+            if (assertionError != null)
+                throw assertionError;
         }
     }
 
@@ -112,9 +129,21 @@ public class MjmlProcessorTest {
     public void multipleThreadsUsingTheSameMjmlProcessor() throws Exception {
         final Integer numberOfThreads = 16;
         ExecutorService executor = Executors.newFixedThreadPool(numberOfThreads);
+        Collection<ConsumerThread> threads = new LinkedList<>();
+        Collection<Future<?>> futures = new LinkedList<Future<?>>();
 
         for(int i=1; i <= numberOfThreads; i++) {
-            executor.execute(new ConsumerThread(i));
+            ConsumerThread thread = new ConsumerThread(i);
+            threads.add(thread);
+            futures.add(executor.submit(thread));
+        }
+
+        // wait for tasks completion
+        for (Future<?> currentFuture : futures) {
+            currentFuture.get();
+        }
+        for (ConsumerThread currentThread : threads) {
+            currentThread.test();
         }
 
         executor.shutdown();

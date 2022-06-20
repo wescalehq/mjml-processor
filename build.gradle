@@ -23,7 +23,6 @@ project.version = scmVersion.version
 group 'com.wescale'
 
 apply plugin: 'java'
-apply plugin: 'maven'
 apply plugin: 'maven-publish'
 apply plugin: 'jacoco'
 
@@ -31,13 +30,19 @@ apply from: 'gradle/code-quality.gradle'
 apply from: 'gradle/releasing.gradle'
 apply from: 'gradle/spotless.gradle'
 
-sourceCompatibility = 1.8
+sourceCompatibility = JavaVersion.VERSION_17
 
 repositories {
     jcenter()
+    mavenCentral()
 }
 
 dependencies {
-    testCompile group: 'commons-io', name: 'commons-io', version: '2.6'
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testImplementation group: 'commons-io', name: 'commons-io', version: '2.11.0'
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    implementation group: 'org.openjdk.nashorn', name: 'nashorn-core', version: '15.4'
+}
+
+jacoco {
+    toolVersion = "0.8.8"
 }
